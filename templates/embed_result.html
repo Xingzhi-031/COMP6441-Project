@@ -14,7 +14,6 @@
         {% if ext in ['png', 'jpg', 'jpeg'] %}
             <p>Image preview:</p>
             <img src="{{ url_for('static', filename=filename) }}" alt="Output Image">
-            <p>PSNR: <strong>{{ psnr }} dB</strong></p>
         {% elif ext == 'mp4' %}
             <p>Video file: <strong>{{ filename }}</strong></p>
         {% endif %}
