@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Embedded</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>File Embedded</h1>
+
+        {% set ext = filename.rsplit('.', 1)[1].lower() %}
+
+        {% if ext in ['png', 'jpg', 'jpeg'] %}
+            <p>Image preview:</p>
+            <img src="{{ url_for('static', filename=filename) }}" alt="Output Image">
+            <p>PSNR: <strong>{{ psnr }} dB</strong></p>
+        {% elif ext == 'mp4' %}
+            <p>Video file: <strong>{{ filename }}</strong></p>
+        {% endif %}
+
+        <a href="{{ url_for('static', filename=filename) }}" download class="button">Download</a>
+
+        {% if client_pubkey and server_pubkey and shared_key %}
+        <hr>
+        <h2>Key Exchange Info</h2>
+
+        <p>Client Key:</p>
+        <pre class="message-box">{{ client_pubkey }}</pre>
+
+        <p>Server Key:</p>
+        <pre class="message-box">{{ server_pubkey }}</pre>
+
+        <p>Derived AES Key:</p>
+        <pre class="message-box">{{ shared_key }}</pre>
+        {% endif %}
+
+        <a href="/" class="button secondary">← Home</a>
+    </div>
+
+    <button onclick="toggleDarkMode()" style="position: fixed; bottom: 20px; right: 20px;">🌓</button>
+    <script>
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle("dark");
+            localStorage.setItem("darkMode", body.classList.contains("dark"));
+        }
+    </script>
+</body>
+</html>

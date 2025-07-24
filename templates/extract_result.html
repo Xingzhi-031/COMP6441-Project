@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Extracted</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Message Retrieved</h1>
+        <p>Hidden content:</p>
+        <div class="message-box">{{ message }}</div>
+        <a href="/" class="button secondary">← Home</a>
+    </div>
+
+    <button onclick="toggleDarkMode()" style="position: fixed; bottom: 20px; right: 20px;">🌓</button>
+    <script>
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle("dark");
+            localStorage.setItem("darkMode", body.classList.contains("dark"));
+        }
+    </script>
+</body>
+</html>

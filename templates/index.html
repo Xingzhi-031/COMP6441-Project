@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StegoChat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>StegoChat</h1>
+
+        <!-- Embed into Image -->
+        <section>
+            <h2>Hide Message in PNG</h2>
+            <form action="/send" method="POST" enctype="multipart/form-data">
+                <label>Message:</label>
+                <textarea name="message" rows="4" required></textarea>
+
+                <label>AES Key (16 chars):</label>
+                <input type="text" name="aes_key" maxlength="16" minlength="16" required>
+
+                <label>PNG Image:</label>
+                <input type="file" name="image" accept=".png" required>
+
+                <button type="submit">Encrypt & Embed</button>
+            </form>
+        </section>
+
+        <hr style="margin: 40px 0;">
+
+        <!-- Extract from Image -->
+        <section>
+            <h2>Extract from PNG</h2>
+            <form action="/receive" method="GET">
+                <label>Stego Image:</label>
+                <input type="file" name="image" accept=".png" required>
+
+                <label>AES Key:</label>
+                <input type="text" name="aes_key" maxlength="16" minlength="16" required>
+
+                <button type="submit" class="button secondary">Decrypt</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Embed into Video -->
+        <section>
+            <h2>🎥 Hide in Video</h2>
+            <form method="POST" action="/embed/video" enctype="multipart/form-data">
+                <label>Message:</label>
+                <textarea name="message" rows="4" required></textarea>
+
+                <label>MP4 Video:</label>
+                <input type="file" name="video" accept="video/mp4" required>
+
+                <label>AES Key:</label>
+                <input type="text" name="key" required>
+
+                <button type="submit">Embed</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Extract from Video -->
+        <section>
+            <h2>🎬 Extract from Video</h2>
+            <form method="POST" action="/extract/video" enctype="multipart/form-data">
+                <label>Stego Video:</label>
+                <input type="file" name="video" accept="video/mp4" required>
+
+                <label>AES Key:</label>
+                <input type="text" name="key" required>
+
+                <button type="submit" class="button secondary">Extract</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Toggle Theme -->
+    <button onclick="toggleDarkMode()" style="position: fixed; bottom: 20px; right: 20px;">🌓</button>
+    <script>
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark");
+        }
+        function toggleDarkMode() {
+            const dark = document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", dark);
+        }
+    </script>
+</body>
+</html>
