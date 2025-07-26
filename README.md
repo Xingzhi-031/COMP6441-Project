@@ -64,6 +64,7 @@ pip install -r requirements.txt
 ```
 
 ### Required libraries:
+
 - `Flask`
 - `OpenCV`
 - `NumPy`
@@ -71,11 +72,24 @@ pip install -r requirements.txt
 - `Pillow`
 
 ## Features
+
 - AES-256 encryption using CBC mode with padding
 - LSB steganography for PNG, MP4, and WAV
 - Support for both CLI and Flask web interface
 - Extraction error handling and capacity checking
 - Output quality validation (e.g. PSNR) to ensure minimal distortion after embedding
+
+## PSNR Principle and Design Purpose
+
+**PSNR (Peak Signal-to-Noise Ratio)** is a widely used metric for evaluating the visual quality of images and videos after they have been processed or compressed. It compares the similarity between the original and modified versions by computing the mean squared error (MSE) and converting it to a logarithmic decibel (dB) scale. A higher PSNR value generally indicates better quality — typically, values above 40 dB are considered visually indistinguishable from the original.
+
+In **StegoChat**, PSNR is used to assess the degree to which the embedding process (via LSB steganography) alters the carrier image. This serves two purposes:
+
+- **Integrity Monitoring**: To ensure that embedding the encrypted payload does not significantly distort the visual content.
+- **Stealth Verification**: To confirm that the changes introduced are subtle enough to avoid raising suspicion during casual inspection.
+
+The tool `CalculateImagePSNR.py` allows users to measure PSNR between the original and the stego image, helping validate the "invisibility" of the hidden message.
+
 
 ## Sample Output
 
@@ -88,6 +102,26 @@ Input sample files:
 
 - **Images**: `Chicken.png`, `IceCream.png`, `MyCat.png`
 - **Videos**: `Chongqing.mp4`, `Flower.mp4`, `Rainbow.mp4`
+
+## Screen Recording Introduction
+
+To help users better understand the logic, operation, and design of StegoChat, a folder of annotated screen recordings is provided: [ScreenRecordingIntroduction/](https://github.com/Xingzhi-031/COMP6441-Project/tree/main/ScreenRecordingIntroduction).
+
+These include:
+- **Environment+Library Introduction.mov** – Setup and dependencies
+- **Scripts Introduction.mov** – Walkthrough of key Python scripts
+- **Logic_Sender.mov** – Demonstrates the encryption and embedding logic
+- **Logic_Receiver.mov** – Explains the extraction and decryption flow
+- **Theme+PSNR Analysis.mov** – UI light/dark themes and PSNR explanation
+- **image_test_recording.mov** – Recording of image embedding via web interface
+- **video_test_demo.mov** – Recording of video embedding via web interface
+
+##  Generative AI Use and Attribution
+
+Some portions of this README document (e.g., structure refinement, grammar correction) were improved using ChatGPT (OpenAI, 2025).
+The original content, ideas, and technical implementation are fully authored by Xingzhi Li.
+Generative AI was not used to generate ideas, code, analysis, or any part of the conceptual design.
+All AI assistance was used only after a first full human draft was completed, in line with UNSW's Generative AI guidance.
 
 ## Author
 Xingzhi Li
