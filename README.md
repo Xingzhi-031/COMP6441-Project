@@ -116,6 +116,8 @@ These include:
 - **image_test_recording.mov** – Recording of image embedding via web interface
 - **video_test_demo.mov** – Recording of video embedding via web interface
 
+A higher-resolution, full version of the demonstration video is also available on YouTube: [https://youtu.be/hVhF0LCP3ww](https://youtu.be/hVhF0LCP3ww)
+
 ##  Generative AI Use and Attribution
 
 Some portions of this README document (e.g., structure refinement, grammar correction) were improved using ChatGPT (OpenAI, 2025).
