@@ -1,0 +1,21 @@
+Real-World Case: Chinese Student in Sydney Abducted Through Virtual Scam, Rescued in Thailand (2024)
+In April 2024, a 23-year-old Chinese student studying management at the University of Sydney suddenly disappeared. Before losing contact, she had been in touch with her parents, saying she was planning to buy an apartment in Sydney. Believing she had everything under control, her father transferred the funds she requested. Soon after, she stopped responding. Her behaviour during the last phone call was described as distant and unnatural, as if she were being told what to say. Two days later, she vanished.
+As days passed with no contact, her disappearance gained traction on Chinese social media and drew attention from international student communities across Australia. At the time, no one knew she had already left the country.
+The real story was far more disturbing.
+According to Thai police from the Special Investigations Unit in Northern Thailand, the student had been manipulated by a telecom fraud syndicate. Members of the group impersonated Chinese law enforcement in a series of phone calls, claiming her identity had been linked to a fraudulent bank account involved in a criminal case. They told her she needed to fly from Australia to Chiang Rai to “cooperate with the investigation,” and warned that if she did not follow instructions, her Australian visa would be immediately revoked.
+Out of fear and confusion, she followed their instructions and flew from Sydney to Chiang Mai, with plans to continue onward to Chiang Rai.
+On May 3rd, Thai authorities found her in a hotel room in Chiang Mai’s Chang Phueak district, in the middle of a video call with members of the fraud group. Officers intervened on the spot and rescued her. She was then escorted to a secure location and placed under protection by the Thai Special Case Division. Her family arrived in Chiang Mai shortly after and was finally reunited with her.
+The scammers demanded 7 million Thai baht, around 1.4 million RMB, threatening the victim with fake legal accusations and pressuring her through fear and isolation. They exploited her confusion and physical distance from home to keep her under control. Thankfully, Thai police acted swiftly and worked closely with the Chinese Embassy to bring her to safety.
+Source:
+https://www.yeeyi.com/news/details/2332353/
+
+How This Case Informed the Design of StegoChat
+This incident is not fiction.   It reflects a growing and deeply worrying trend: international students being targeted by cross-border fraud rings that weaponise communication itself.   The attackers never needed to break encryption or hack a system.   They used fear, timing, and believable dialogue to manipulate trust and actions.
+The student’s messages to her family were not lies—they were real, but contextually hijacked.   Her phone and apps weren’t breached, yet her safety was compromised because the communication process had no safeguards against coercion or detection.
+For us, this case was a wake-up call.
+My project, StegoChat, is not designed just to protect messages from being read. It is designed to prevent sensitive messages from being seen at all. In environments where surveillance, impersonation, or forced compliance is a risk, the existence of communication itself must be concealed.
+StegoChat achieves this through:
+• AES 256 encryption, ensuring messages are unreadable without the correct key
+• LSB-based steganography, hiding the ciphertext within image or video files so that no message appears to exist
+By combining these two layers, StegoChat provides users with the ability to communicate safely in environments where visible messages might invite unwanted attention or even endanger lives.
+This case shaped the way we approached the design of our system and highlighted why solutions like StegoChat are urgently needed.
