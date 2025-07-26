@@ -22,6 +22,7 @@ It uses AES-256 encryption and the Least Significant Bit (LSB) technology to emb
 - `static/` — Static files including CSS, embedded images/videos
 - `IMAGES/` — Sample PNG images used as cover files
 - `VIDEOS/` — Sample MP4 videos used as cover files
+- `ScreenRecordingIntroduction/` — Annotated screen recordings of the system's logic and usage
 - `README.md` — This documentation
 
 ## Operation Instructions
