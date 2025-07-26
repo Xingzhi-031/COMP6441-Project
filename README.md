@@ -117,6 +117,7 @@ These include:
 - **video_test_demo.mov** – Recording of video embedding via web interface
 
 A higher-resolution, full version of the demonstration video is also available on YouTube: [https://youtu.be/hVhF0LCP3ww](https://youtu.be/hVhF0LCP3ww)
+**Tip**: Please set the video quality to 720p for best clarity when viewing code and interface details.
 
 ##  Generative AI Use and Attribution
 
