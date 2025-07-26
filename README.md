@@ -18,6 +18,7 @@ It uses AES-256 encryption and the Least Significant Bit (LSB) technology to emb
 - `test_video_stego.py` — Script for testing video embedding/extraction
 - `CalculateImagePSNR.py` — Evaluates image quality using PSNR
 - `check_video.py` — Checks video integrity post-embedding
+- `Case Study Before Starting the project.txt` - Presents a real-world incident that motivated the design of this project
 - `templates/` — HTML templates for the Flask frontend
 - `static/` — Static files including CSS, embedded images/videos
 - `IMAGES/` — Sample PNG images used as cover files
