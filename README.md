@@ -15,6 +15,7 @@ It uses AES-256 encryption and the Least Significant Bit (LSB) technology to emb
 - `stego_video.py` — Frame-wise LSB embedding for MP4 videos
 - `stego_audio.py` — Sample-level LSB embedding for WAV audio
 - `client.py` — Command-line utility client
+- `DiffieHellman.py` — Implements Diffie–Hellman key exchange using DSA parameters and SHA-256 hashing
 - `test_video_stego.py` — Script for testing video embedding/extraction
 - `CalculateImagePSNR.py` — Evaluates image quality using PSNR
 - `check_video.py` — Checks video integrity post-embedding
